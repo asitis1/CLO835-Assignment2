@@ -35,7 +35,7 @@ jobs:
     - name: App build, test, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: myapp
+        ECR_REPOSITORY: applicationRepo
         IMAGE_TAG: v1
       run: |
           ls -ltra
@@ -51,7 +51,7 @@ jobs:
     - name: MySQL DB build, test, tag, and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: mydb
+        ECR_REPOSITORY: sqlRepo
         IMAGE_TAG: v1
       run: | 
         ls -ltra
