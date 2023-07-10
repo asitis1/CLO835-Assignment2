@@ -18,7 +18,7 @@ spec:
         - name: DBHOST
           value: "mysql.ashrestha.svc.cluster.local"
         - name: DBUSER
-          value: "ashrestha"
+          value: "root"
         - name: DBPWD
           value: "secret55"  
         - name: DBPORT
