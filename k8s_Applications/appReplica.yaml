@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+
+kind: ReplicaSet
+
+metadata:
+  name: application-replica
+  labels:
+    app: employees
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: application
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        image: 
+        env:
+        - name: DBHOST
+          value: "mysql.ashrestha.svc.cluster.local"
+        - name: DBUSER
+          value: "ashrestha"
+        - name: DBPWD
+          value: "secret55"  
+        - name: DBPORT
+          value: "3306"

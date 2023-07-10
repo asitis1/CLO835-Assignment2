@@ -1,0 +1,25 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  labels:
+    app: webserver
+  name:  application
+
+spec:
+  containers:
+    - name: application
+      image: 
+      ports:
+        - containerPort: 8080
+          protocol: TCP
+      env:
+        - name: DBHOST
+          value: "mysql.ashrestha.svc.cluster.local"
+        - name: DBUSER
+          value: "ashrestha"
+        - name: DBPWD
+          value: "secret55"  
+        - name: DBPORT
+          value: "3306"
